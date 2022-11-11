@@ -15,7 +15,23 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from listings import views
+from django.contrib.auth.views import LoginView
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
+path('admin/', admin.site.urls),
+path('home/', views.home, name='home'),
+path('subscribe/', views.subscribe),
+path('flux/', views.flux, name='flux'),
+path('contact-us/', views.contact),
+path('abonnements/', views.abonnements, name='abonnements'),
+path('tickets/', views.tickets, name='tickets'),
+path('tickets-modify/', views.ticketsModify),
+path('critics/', views.critics, name='critics'),
+path('critics-response/', views.criticsResponse),
+path('critics-modify/', views.criticsModify),
+path('your-posts/', views.yourPosts, name='yourposts'),
+path('base/', views.base)
 ]
+
+

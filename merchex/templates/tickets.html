@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div class="container mt-4 text-center text-secondary">
+        <div class="row">
+            <div class="col-2">
+            </div>
+            <div class="col-8">
+                <div class="container text-center">
+                    <h3>Créer un ticket</h3>
+                    {% if error %}
+                    <div class="alert alert-danger" role="alert">
+                        A simple danger alert—check it out!
+                    </div>
+                    {% endif %}
+                    {% if is_save %}
+                    <div class="alert alert-success" role="alert">
+                        Ticket sauvegardé ! 
+                    </div>
+                    {% endif %}
+                    <form action="" method="POST" enctype="multipart/form-data">
+                        {% csrf_token %}
+                        <div class="form-group col text-center">
+                            <div class="col mt-2">
+                                <label for="ex1">Titre</label>
+                                <input class="form-control" id="ex1" type="text" name="title">
+                                <label for="exampleFormControlTextarea1" class="form-label mt-2">Description</label>
+                                <textarea class="form-control" id="exampleFormControlTextarea1" rows="5" name="description" required></textarea>
+                            </div>
+                        </div>
+                    <h4 class="mt-4">Image</h4>
+                    <input class="form-control" type="file" id="formFile" name="image"></input>
+                    <div class="row">
+                        <button type="submit" id="button-img" class="btn btn-secondary text-light mt-5 btn-lg">Valider le
+                        ticket</button>
+                    </div>
+                    </form>
+                </div>
+            </div>
+            <div class="col-2">
+            </div>
+        </div>
+{% endblock content %}

@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div class="container mt-4 text-center text-secondary">
+        <div class="row">
+            <div class="col-2">
+            </div>
+            <div class="col-8">
+                <div class="container text-center">
+                    <h3>Modifier votre ticket</h3>
+                    <form>
+                        <div class="form-group col text-center">
+                            <div class="col mt-2">
+                                <label for="ex1">Titre</label>
+                                <input class="form-control" id="ex1" type="text">
+                                <label for="exampleFormControlTextarea1" class="form-label mt-2">Description</label>
+                                <textarea class="form-control" id="exampleFormControlTextarea1" rows="5"></textarea>
+                            </div>
+                        </div>
+                    </form>
+                    <h4 class="mt-4">Image</h4>
+                    <button type="button" id="button-img" class="btn btn-secondary text-light mt-2">Charger</button>
+                    <div class="row">
+                        <button type="button" id="button-img" class="btn btn-secondary text-light mt-5 btn-lg">Valider
+                            le
+                            ticket</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-2">
+            </div>
+        </div>
+{% endblock content %}

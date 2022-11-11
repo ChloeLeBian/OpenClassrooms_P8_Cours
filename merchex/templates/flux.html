@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div class="container mt-4 text-center text-secondary">
+        <div class="row">
+            <div class="col-2">
+            </div>
+            <div class="col-8">
+                <button type="button" class="btn btn-secondary text-light mt-2"><a
+                        href="{% url 'tickets' %}" class="link-light">Demander une critique</a></button>
+                <button type="button" class="btn btn-secondary text-light mt-2"><a href="{% url 'critics' %}"
+                        class="link-light">Créer une critique</a></button>
+                {% for review in reviews %}
+                <div class="card mt-4">
+                    <div class="card-body">
+                        <p class="card-text">{{ review.time_created }}</p>
+                        <h5 class="card-title">{{ review.user }} a publié une critique</h5>
+                        <p class="card-text">{{ review.headline }}</p>
+                        {% if review.rating %}
+                        <p class="card-text">{{ review.rating }}</p>
+                        {% endif %}
+                        <p class="card-text">{{ review.body }}</p>
+                        <div class="card mt-4">
+                            <h5 class="card-title">{{ review.ticket.user }}</h5>
+                            <p class="card-text">{{ review.ticket.title }}</p>
+                            <img class="card-img-top" src="..." alt="Card image cap">{{ review.ticket.image }}
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+                {% for ticket in tickets %}
+                <div class="card mt-4">
+                    <div class="card-body">
+                        <p class="card-text">{{ ticket.time_created }}</p>
+                        <h5 class="card-title">{{ ticket.user }} a demandé une critique</h5>
+                        <p class="card-text">{{ ticket.title }}</p>
+                        <a href="#" class="btn btn-secondary mt-4">Créer une critique</a>
+                    </div>
+                </div>
+                {% endfor %}
+
+            </div>
+            <div class="col-2">
+            </div>
+{% endblock content %}
+
+
+

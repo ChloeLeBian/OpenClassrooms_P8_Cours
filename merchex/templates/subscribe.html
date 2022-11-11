@@ -1,0 +1,74 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+    <title>Document</title>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-secondary bg-secondary">
+        <div class="container-fluid">
+            <a class="navbar-brand mx-auto text-light" href="{% url 'home' %}" class="link-light">LITReview</a>
+        </div>
+    </nav>
+    <div class="container mt-4 text-center text-secondary">
+        <div class="row">
+            <div class="col-4">
+            </div>
+            <div class="col-4">
+                <div class="container text-center">
+                    <h2>Inscrivez-vous</h2>
+                    {{ form.errors }}
+                    <form action="" method="post" novalidate>
+                        <div class="form-group col text-center">
+                            <div class="col mt-2">
+                                <label for="ex1">Nom d'utilisateur</label>
+                                {{ form.username }}
+                            </div>
+                            <div class="col mt-2">
+                                <label for="ex2">Mot de passe</label>
+                                <input type="password" class="form-control" name="password1" autocomplete="new-password"
+                                    required=""
+                                    id="id_password1">
+                            </div>
+                            <div class="col mt-2">
+                                <label for="ex3">Confirmer mot de passe</label>
+                                <input type="password" class="form-control" name="password2" autocomplete="new-password"
+                                    required=""
+                                    id="id_password2">
+                            </div>
+                        </div>
+                    {% csrf_token %}
+                    <input type="submit" value="Envoyer" class="btn btn-secondary text-light mt-2">
+                    </form>
+                    <div class="container mt-4">
+                        <button type="button" class="btn btn-secondary text-light"><a href="{% url 'home' %}"
+                                class="link-light">Accueil</a></button>
+                    </div>
+                </div>
+                <div class="col-4">
+                </div>
+
+
+
+
+
+ <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
+     integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous">
+ </script>
+ <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js"
+     integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk" crossorigin="anonymous">
+ </script>
+ <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.min.js"
+     integrity="sha384-ODmDIVzN+pFdexxHEHFBQH3/9/vQ9uori45z4JjnFsRydbmQbmL5t1tQ0culUzyK" crossorigin="anonymous">
+ </script>
+</body>
+</html>
